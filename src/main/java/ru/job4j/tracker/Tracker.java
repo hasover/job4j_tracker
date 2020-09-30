@@ -59,4 +59,14 @@ public class Tracker {
         items[rsl].setName(item.getName());
         return true;
     }
+
+    public boolean delete(int id) {
+        int index = indexOf(id);
+        if (index == -1) {
+            return false;
+        }
+        System.arraycopy(items,index + 1, items, index, size - index);
+        items[size--] = null;
+        return true;
+    }
 }
