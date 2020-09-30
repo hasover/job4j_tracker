@@ -1,11 +1,13 @@
 package ru.job4j.tracker;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-
 public class StartUI {
     public static void main(String[] args) {
-        Item item = new Item(1, "one");
-        System.out.println(item);
+       Tracker tracker = new Tracker();
+       Item one = new Item();
+       one.setId(1);
+       one.setName("First");
+       tracker.add(one);
+       Item found = tracker.findById(1);
+        System.out.println(found.getId() + " " + found.getName());
     }
 }
