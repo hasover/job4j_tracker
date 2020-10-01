@@ -49,7 +49,8 @@ public class Tracker {
         if (rsl == -1) {
             return false;
         }
-        items[rsl].setName(item.getName());
+        items[rsl] = item;
+        items[rsl].setId(id);
         return true;
     }
 
