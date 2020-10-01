@@ -60,7 +60,8 @@ public class Tracker {
             return false;
         }
         System.arraycopy(items,index + 1, items, index, size - index);
-        items[size--] = null;
+        items[size - 1] = null;
+        size--;
         return true;
     }
 }
