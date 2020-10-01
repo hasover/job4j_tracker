@@ -8,6 +8,13 @@ public class Item {
         return id;
     }
 
+    public Item(String name) {
+        this.name = name;
+    }
+
+    public Item() {
+    }
+
     public void setId(int id) {
         this.id = id;
     }
@@ -24,7 +31,7 @@ public class Item {
     public String toString() {
         return "Item{" +
                 "id=" + id +
-                ", name='" + name +
+                ", name='" + name + "\'" +
                 '}';
     }
 }
