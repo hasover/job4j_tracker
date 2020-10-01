@@ -19,14 +19,7 @@ public class Tracker {
     }
 
     public Item[] findAll() {
-        Item[] itemsWithoutNull = new Item[size];
-        int notNull = 0;
-        for (int i = 0; i < size; i++) {
-            if (items[i] != null) {
-                itemsWithoutNull[notNull++] = items[i];
-            }
-        }
-        return Arrays.copyOf(itemsWithoutNull,notNull);
+        return Arrays.copyOf(items,size);
     }
 
     public Item[] findByName(String key) {
