@@ -55,6 +55,8 @@ public class StartUI {
             for (Item item : items) {
                 System.out.println(item);
             }
+        } else {
+            System.out.println("No items with such id.");
         }
     }
 
