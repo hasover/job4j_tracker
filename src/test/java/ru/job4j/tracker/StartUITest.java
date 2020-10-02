@@ -30,4 +30,26 @@ public class StartUITest {
         Item expected = new Item("Update program");
         assertThat(created.getName(), is(expected.getName()));
     }
+
+    @Test
+    public void whenReplaceItem() {
+        String[] answers = {"1", "Update program"};
+        Tracker tracker = new Tracker();
+        Input input = new StubInput(answers);
+        Item item = new Item("Fix PC");
+        tracker.add(item);
+        StartUI.editItem(input, tracker);
+        assertThat(tracker.findAll()[0].getName(), is("Update program"));
+    }
+
+    @Test
+    public void whenDeleteItem() {
+        String[] answers = {"1"};
+        Tracker tracker = new Tracker();
+        Input input = new StubInput(answers);
+        Item item = new Item("Fix PC");
+        tracker.add(item);
+        StartUI.deleteItem(input, tracker);
+        assertThat(tracker.findById(1), is((Item)null));
+    }
 }
