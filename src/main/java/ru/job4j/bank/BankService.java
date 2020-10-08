@@ -38,9 +38,10 @@ public class BankService {
             return null;
         }
         List<Account> accounts = users.get(user);
-        int index = accounts.indexOf(new Account(requisite,0));
-        if (index != -1) {
-            return accounts.get(index);
+        for(Account account : accounts) {
+            if (account.getRequisite().equals(requisite)) {
+                return account;
+            }
         }
         return null;
     }
