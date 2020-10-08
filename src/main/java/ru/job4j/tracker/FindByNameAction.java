@@ -9,6 +9,7 @@ public class FindByNameAction implements UserAction {
     public FindByNameAction(Output out) {
         this.out = out;
     }
+
     @Override
     public String name() {
         return "Find items by name";

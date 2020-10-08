@@ -13,7 +13,7 @@ public class ItemTest {
                                          new Item(2, "B"),
                                          new Item(3, "C"));
         Collections.sort(items, new SortItems());
-        assertThat(items, is(Arrays.asList( new Item(2, "B"),
+        assertThat(items, is(Arrays.asList(new Item(2, "B"),
                                             new Item(3, "C"),
                                             new Item(5, "A"))));
     }

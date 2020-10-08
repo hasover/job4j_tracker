@@ -7,11 +7,11 @@ import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.greaterThan;
 
-
 public class JobTest {
     @Test
     public void whenComparatorByNameAndPririty() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(
+                                          new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -68,6 +68,4 @@ public class JobTest {
         );
         assertThat(rsl, lessThan(0));
     }
-
-
 }

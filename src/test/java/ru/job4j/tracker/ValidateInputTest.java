@@ -33,9 +33,9 @@ public class ValidateInputTest {
     public void whenTestOutput() {
         Output out = new StubOutput();
         Input in = new StubInput(
-                new String[] {"A","1"});
+                new String[] {"A", "1"});
         ValidateInput input = new ValidateInput(out, in);
-        int selected = input.askInt("Enter menu:");;
+        int selected = input.askInt("Enter menu:");
         System.out.println(out.toString());
         assertThat(out.toString(), is("Please enter validate data again.\r\n"));
     }
