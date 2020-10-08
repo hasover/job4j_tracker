@@ -48,7 +48,7 @@ public class Tracker {
             return false;
         }
         item.setId(id);
-        items.add(rsl, item);
+        items.set(rsl, item);
         return true;
     }
 
