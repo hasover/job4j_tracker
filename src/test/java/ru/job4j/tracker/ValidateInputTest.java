@@ -37,6 +37,7 @@ public class ValidateInputTest {
         ValidateInput input = new ValidateInput(out, in);
         int selected = input.askInt("Enter menu:");
         System.out.println(out.toString());
-        assertThat(out.toString(), is("Please enter validate data again.\r\n"));
+        String expected = "Please enter validate data again." + System.lineSeparator();
+        assertThat(out.toString(), is(expected));
     }
 }
