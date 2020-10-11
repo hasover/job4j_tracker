@@ -59,8 +59,8 @@ public class SearchAtt {
 
     public static void main(String[] args) {
         List<Attachment> list = Arrays.asList(new Attachment("Aa", 50), new Attachment("Bb", 100));
-        System.out.println(filterSize(list,70));
-        System.out.println(filterName(list,"a"));
+        System.out.println(filterSize(list, 70));
+        System.out.println(filterName(list, "a"));
     }
 
 }
