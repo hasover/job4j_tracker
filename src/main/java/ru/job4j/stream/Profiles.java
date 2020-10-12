@@ -9,4 +9,12 @@ public class Profiles {
     public static List<Address> collect(List<Profile> profiles) {
         return profiles.stream().map(Profile::getAddress).collect(Collectors.toList());
     }
+
+    public static List<Address> collectUnique(List<Profile> addresses) {
+        return collect(addresses)
+                .stream()
+                .sorted(Comparator.comparing(Address::getCity))
+                .distinct()
+                .collect(Collectors.toList());
+    }
 }

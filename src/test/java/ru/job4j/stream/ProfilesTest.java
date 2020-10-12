@@ -21,4 +21,18 @@ public class ProfilesTest {
         assertThat(addresses, is(List.of(one, two, three)));
     }
 
+    @Test
+    public void testCollectUnique() {
+        Address one = new Address("A", "A", 1, 1);
+        Address two = new Address("B", "B", 2, 2);
+        Address three = new Address("C", "C", 3, 3);
+        Address four = new Address("A", "A", 1, 1);
+        List<Profile> profileList = List.of(new Profile(one),
+                                            new Profile(two),
+                                            new Profile(three),
+                                            new Profile(four));
+        List<Address> addresses = Profiles.collectUnique(profileList);
+        assertThat(addresses, is(List.of(one, two, three)));
+    }
+
 }
