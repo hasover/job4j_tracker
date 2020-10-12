@@ -10,8 +10,8 @@ public class Profiles {
         return profiles.stream().map(Profile::getAddress).collect(Collectors.toList());
     }
 
-    public static List<Address> collectUnique(List<Profile> addresses) {
-        return collect(addresses)
+    public static List<Address> collectUnique(List<Profile> profiles) {
+        return collect(profiles)
                 .stream()
                 .sorted(Comparator.comparing(Address::getCity))
                 .distinct()
