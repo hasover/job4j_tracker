@@ -9,6 +9,8 @@ public class StudentMap {
     public static Map<String, Student> toMap(List<Student> students) {
         return students
                 .stream()
-                .collect(Collectors.toMap(Student::getSurname, x -> x, (exist, replace) -> replace));
+                .collect(Collectors.toMap(Student::getSurname,
+                                          x -> x,
+                                          (exist, replace) -> replace));
     }
 }
