@@ -14,11 +14,11 @@ public class EditAction implements UserAction {
     }
 
     @Override
-    public boolean execute(Input input, Tracker tracker) {
+    public boolean execute(Input input, Store storeTracker) {
         int id = input.askInt("Enter the id:");
         String name = input.askStr("Enter the new name:");
         Item newItem = new Item(name);
-        if (tracker.replace(id, newItem)) {
+        if (storeTracker.replace(id, newItem)) {
             out.println("Item replaced.");
         } else {
             out.println("No item with such id.");

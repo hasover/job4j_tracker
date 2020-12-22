@@ -1,12 +1,12 @@
 package ru.job4j.tracker.singleton;
 
-import ru.job4j.tracker.Tracker;
+import ru.job4j.tracker.MemTracker;
 
 public class TrackerSingle4 {
-    private Tracker tracker;
+    private MemTracker memTracker;
 
     private TrackerSingle4() {
-        tracker = new Tracker();
+        memTracker = new MemTracker();
     }
 
     public static TrackerSingle4 getInstance() {
@@ -17,7 +17,7 @@ public class TrackerSingle4 {
         private static final TrackerSingle4 INSTANCE = new TrackerSingle4();
     }
 
-    public Tracker getTracker() {
-        return tracker;
+    public MemTracker getMemTracker() {
+        return memTracker;
     }
 }

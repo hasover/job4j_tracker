@@ -1,13 +1,12 @@
 package ru.job4j.tracker.singleton;
 
 import org.junit.Test;
-import ru.job4j.tracker.Tracker;
 
 import static org.hamcrest.Matchers.is;
 import static org.hamcrest.Matchers.nullValue;
 import static org.junit.Assert.assertThat;
 
-public class TrackerSingleTest {
+public class MemTrackerSingleTest {
     @Test
     public void whenTestSingle1() {
         TrackerSingle1 one = TrackerSingle1.INSTANCE;
