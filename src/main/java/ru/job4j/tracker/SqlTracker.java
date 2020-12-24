@@ -63,9 +63,10 @@ public class SqlTracker implements Store {
 
     @Override
     public boolean delete(int id) {
-        try (Statement statement = cn.createStatement()) {
-            String sql = "delete from items where id = " + id;
-            return statement.executeUpdate(sql) > 0;
+        try (PreparedStatement statement =
+                     cn.prepareStatement("delete from items where id = ?")) {
+            statement.setInt(1, id);
+            return statement.executeUpdate() > 0;
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
@@ -106,9 +107,10 @@ public class SqlTracker implements Store {
 
     @Override
     public Item findById(int id) {
-        try (Statement statement = cn.createStatement()) {
-            String sql = "select * from items where id = " + id;
-            ResultSet result = statement.executeQuery(sql);
+        try (PreparedStatement statement =
+                     cn.prepareStatement("select * from items where id = ?")) {
+            statement.setInt(1, id);
+            ResultSet result = statement.executeQuery();
             if (result.next()) {
                 return new Item(result.getInt("id"), result.getString("name"));
             }
