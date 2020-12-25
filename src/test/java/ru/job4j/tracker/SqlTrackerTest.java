@@ -15,7 +15,8 @@ import static org.junit.Assert.*;
 
 public class SqlTrackerTest {
     public Connection init() {
-        try (InputStream in = SqlTracker.class.getClassLoader().getResourceAsStream("app.properties")) {
+        try (InputStream in = SqlTracker.class.getClassLoader().
+                getResourceAsStream("app.properties")) {
             Properties config = new Properties();
             config.load(in);
             Class.forName(config.getProperty("driver-class-name"));
@@ -41,7 +42,7 @@ public class SqlTrackerTest {
         try (SqlTracker tracker = new SqlTracker(ConnectionRollback.create(this.init()))) {
             Item addedItem = tracker.add(new Item(0, "desc"));
             tracker.replace(addedItem.getId(), new Item(0, "descNew"));
-            assertThat(tracker.findById(addedItem.getId()).getName(), is ("descNew"));
+            assertThat(tracker.findById(addedItem.getId()).getName(), is("descNew"));
         }
     }
 
@@ -50,7 +51,7 @@ public class SqlTrackerTest {
         try (SqlTracker tracker = new SqlTracker(ConnectionRollback.create(this.init()))) {
             Item addedItem = tracker.add(new Item(0, "desc"));
             tracker.delete(addedItem.getId());
-            assertThat(tracker.findById(addedItem.getId()), is (nullValue()));
+            assertThat(tracker.findById(addedItem.getId()), is(nullValue()));
         }
     }
 
