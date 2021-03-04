@@ -2,6 +2,13 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс представляет собой модель счета.
+ * Номер счета и баланс инкапсулированы,
+ * методы equals и hashcode переопределены.
+ * @author Khasan Akhmetvaleev
+ * @version 1.0
+ */
 public class Account {
     private String requisite;
     private double balance;

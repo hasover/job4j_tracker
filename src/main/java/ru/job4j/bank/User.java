@@ -2,6 +2,13 @@ package ru.job4j.bank;
 
 import java.util.Objects;
 
+/**
+ * Класс представляет собой модель клиента.
+ * Номер паспорта и ФИО инкапсулированы,
+ * методы equals и hashcode переопределены.
+ * @author Khasan Akhmetvaleev
+ * @version 1.0
+ */
 public class User {
     private String passport;
     private String username;
